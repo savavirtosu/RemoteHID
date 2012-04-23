@@ -1,0 +1,13 @@
+
+class SERVER:
+	UDP_PORT = 7282
+	UDP_HOST = 'localhost'
+
+	TCP_PORT = 7283
+	TCP_HOST = 'localhost'
+
+	UDP_ECHO_PORT = 7284
+
+	MAX_BUFFER_SIZE = 2048
+	MAX_NUM_INCOMING_CONNECTION = 5
+
