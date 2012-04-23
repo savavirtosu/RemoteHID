@@ -24,7 +24,7 @@ namespace RemoteHidWP7
         // Simple button Click event handler to take us to the second page
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Accelerometer.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/AccelerometerWindow.xaml", UriKind.Relative));
         }
     }
 }
