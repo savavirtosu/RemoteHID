@@ -1,3 +1,17 @@
+#############################################################################
+# Copyright 2012 Virtosu Sava 												#				
+# Licensed under the Apache License, Version 2.0 (the "License");          	#
+# you may not use this file except in compliance with the License.         	#
+# You may obtain a copy of the License at 									#
+# 																			#
+# http://www.apache.org/licenses/LICENSE-2.0 								#
+# 																			#
+# Unless required by applicable law or agreed to in writing, software 		#
+# distributed under the License is distributed on an "AS IS" BASIS, 		#
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 	#
+# See the License for the specific language governing permissions and		#
+# limitations under the License. 											#
+#############################################################################
 
 from udpServer import UDPServer
 from tcpServer import TCPServer
@@ -11,26 +25,5 @@ tcpServer = TCPServer(SERVER.TCP_PORT)
 tcpServer.start()
 udpServer = UDPServer(SERVER.UDP_PORT)
 udpServer.start()
-
-
-# print "test the win32"
-# import win32api
-# import win32com.client
-
-# shell = win32com.client.Dispatch("WScript.Shell")
-# shell.Run("calc")
-# win32api.Sleep(100)
-# shell.AppActivate("Calculator")
-# win32api.Sleep(100)
-# shell.SendKeys("1{+}")
-# win32api.Sleep(500)
-# shell.SendKeys("2")
-# win32api.Sleep(500)
-# shell.SendKeys("~") # ~ is the same as {ENTER}
-# win32api.Sleep(500)
-# shell.SendKeys("*3")
-# win32api.Sleep(500)
-# shell.SendKeys("~")
-# win32api.Sleep(2500)
 
 print "End of Main"
