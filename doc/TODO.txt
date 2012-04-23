@@ -1,0 +1,3 @@
+-Check if WiFi is on or not 
+ 			DeviceNetworkInformation.IsWiFiEnabled.ToString();
+-make animation in WP7 (showing that device is searching for computers).

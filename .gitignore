@@ -12,3 +12,9 @@
 _ReSharper.*
 *.resharper
 Ankh.NoLoad
+RemoteHidPythonServer/RemoteHidPythonServer.sublime-workspace
+RemoteHidPythonServer/RemoteHidPythonServer.sublime-project
+RemoteHidPythonServer/configs.pyc
+RemoteHidPythonServer/tcpServer.pyc
+RemoteHidPythonServer/udpEchoServer.pyc
+RemoteHidPythonServer/udpServer.pyc
