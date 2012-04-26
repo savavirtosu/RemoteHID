@@ -37,27 +37,34 @@ namespace RemoteHidWP7
         //returning dictionary contain as a 
         public List<KeyValuePair<string,string>> SearchComputers()
         {
+            List<KeyValuePair<string, string>> listOfAvalableApplication =  new List<KeyValuePair<string, string>>();
             _udpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            _tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            _tcpSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp); 
             
             try
             {
                 SendMessageThroughUDP(_deviceInfo.DeviceName, UDP_ECHO_PORT);
                 Debug.WriteLine("FROM Server:"+ReceiveMessageThroughUDP(UDP_ECHO_PORT));
 
-
                 SendMessageThroughUDP(_deviceInfo.DeviceId + " throw UDP");
                 Debug.WriteLine("FROM Server:" + ReceiveMessageThroughUDP());
 
                 SendMessageThroughTCP(_deviceInfo.DeviceName+" throw tcp");
                 Debug.WriteLine("FROM Server:" + ReceiveMessageThroughTCP());
+
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>(_ipOfServer.ToString(),"TestApp1"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 2", "TestApp2"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>("CN3", "Applicaiton 3"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 4", "Power Point test 4"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 5", "Test length length length " +
+                "length length length length length length length length length length length length 555555555555555555555555555"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 6", "Test6666"));
                 
             }catch(CommunicatorException e)
             {
                 Debug.WriteLine("ERROR:"+e.Message);
             }
-            return null;
-
+            return listOfAvalableApplication;
         }
 
         private string ReceiveMessageThroughTCP()

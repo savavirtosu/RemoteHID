@@ -26,7 +26,7 @@ namespace RemoteHidWP7
         Vector3 acceleration;
         bool isDataValid;
 
-        private Communicator communicator;
+        //private Communicator communicator;
 
 
         public AccelerometerWindow()
@@ -52,6 +52,8 @@ namespace RemoteHidWP7
                 timer.Interval = TimeSpan.FromMilliseconds(30);
                 timer.Tick += new EventHandler(timer_Tick);
             }
+
+            //MainPage.communicator
 
             if (accelerometer == null)
             {
@@ -84,17 +86,15 @@ namespace RemoteHidWP7
 
 
 
-            string deviceId = Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId"));
-            string deviceName = DeviceStatus.DeviceName.ToString();
-            Debug.WriteLine("DeviceID=" + deviceId);
-            Debug.WriteLine("DeviceName=" + deviceName);
-            DeviceInfo deviceInfo = new DeviceInfo();
-            deviceInfo.DeviceId = deviceId;
-            deviceInfo.DeviceName = deviceName;
-            communicator = new Communicator(deviceInfo);
-            communicator.SearchComputers();
-            PageTitle.Text = "here you go";
-
+//            string deviceId = Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId"));
+//            string deviceName = DeviceStatus.DeviceName.ToString();
+//            Debug.WriteLine("DeviceID=" + deviceId);
+//            Debug.WriteLine("DeviceName=" + deviceName);
+//            DeviceInfo deviceInfo = new DeviceInfo();
+//            deviceInfo.DeviceId = deviceId;
+//            deviceInfo.DeviceName = deviceName;
+//            communicator = new Communicator(deviceInfo);
+//            communicator.SearchComputers();
         }
 
         void accelerometer_CurrentValueChanged(object sender, SensorReadingEventArgs<AccelerometerReading> e)
@@ -121,7 +121,7 @@ namespace RemoteHidWP7
                 yTextBlock.Text = "Y: " + acceleration.Y.ToString("0.00");
                 zTextBlock.Text = "Z: " + acceleration.Z.ToString("0.00");
 
-                communicator.SendMessageThroughUDP(acceleration.X.ToString("0.00") +
+                MainPage.communicator.SendMessageThroughUDP(acceleration.X.ToString("0.00") +
                                                    ":" + acceleration.Y.ToString("0.00") +
                                                    ":" + acceleration.Z.ToString("0.00"));
 

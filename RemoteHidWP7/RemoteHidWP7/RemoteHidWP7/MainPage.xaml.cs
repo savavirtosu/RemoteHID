@@ -15,16 +15,16 @@ namespace RemoteHidWP7
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        public static Communicator communicator;
         // Constructor
         public MainPage()
         {
             InitializeComponent();
         }
-
         // Simple button Click event handler to take us to the second page
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AccelerometerWindow.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/SearchComputers.xaml", UriKind.Relative));
         }
     }
 }
