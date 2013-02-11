@@ -22,22 +22,22 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Avalable Applicaiton" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="RemoteHID - Avalable Applicaiton on the Network" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <ProgressBar HorizontalAlignment="Left" Margin="47,300,0,362" Name="progressBar1" Width="383"  />
             <TextBlock HorizontalAlignment="Left" Margin="98,254,0,400" Name="textBlockSearchComputers" Text="Searching for computers..." Width="298" Foreground="White" FontSize="22" />
-            <ListBox Height="646" Margin="0,6,0,0" Name="listBox1" VerticalAlignment="Top" Width="476" Tap="listBox1_Tap">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Height="132">
-                            <StackPanel Width="100">
-                                <TextBlock Text="{Binding Key}" Foreground="#FFC8AB14" FontSize="28" />
+            <ListBox Height="646" Margin="0,6,0,0" Name="listBox1" VerticalAlignment="Top" Width="476">
+                <ListBox.ItemTemplate >
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Height="132" >
+                            <StackPanel Width="170" >
+                                <TextBlock Text="{Binding Key}" Foreground="#FFC8AB14" FontSize="28" Tap="listBox1_Tap"/>
                             </StackPanel>
-                            <StackPanel Width="370">
-                                <TextBlock Text="{Binding Value}" TextWrapping="Wrap" FontSize="24" />
+                            <StackPanel Width="300">
+                                <TextBlock Text="{Binding Value}" TextWrapping="Wrap" FontSize="24" Tap="listBox1_Tap"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>

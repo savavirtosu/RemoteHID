@@ -52,13 +52,9 @@ namespace RemoteHidWP7
                 SendMessageThroughTCP(_deviceInfo.DeviceName+" throw tcp");
                 Debug.WriteLine("FROM Server:" + ReceiveMessageThroughTCP());
 
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>(_ipOfServer.ToString(),"TestApp1"));
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 2", "TestApp2"));
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>("CN3", "Applicaiton 3"));
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 4", "Power Point test 4"));
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 5", "Test length length length " +
-                "length length length length length length length length length length length length 555555555555555555555555555"));
-                listOfAvalableApplication.Add(new KeyValuePair<string, string>("Computer Name 6", "Test6666"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>(_ipOfServer.ToString(), "Power Point"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>(_ipOfServer.ToString(), "Virtual Keyboard"));
+                listOfAvalableApplication.Add(new KeyValuePair<string, string>(_ipOfServer.ToString(), "Racer Game"));
                 
             }catch(CommunicatorException e)
             {

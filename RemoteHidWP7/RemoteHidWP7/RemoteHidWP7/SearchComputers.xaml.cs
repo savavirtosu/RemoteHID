@@ -65,7 +65,38 @@ namespace RemoteHidWP7
 
         private void listBox1_Tap(object sender, GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/AccelerometerWindow.xaml", UriKind.Relative));
+            // If selected index is -1 (no selection) do nothing
+            KeyValuePair<string, string> pressedElement = (KeyValuePair<string, string>) (sender as TextBlock).DataContext;
+            Debug.WriteLine("The Element="+pressedElement.Key+" "+pressedElement.Value);
+            if(pressedElement.Value.Equals("Power Point"))
+            {
+                NavigationService.Navigate(new Uri("/TouchWindow.xaml", UriKind.Relative));
+                MainPage.communicator.SendMessageThroughUDP("Mode:PowerPoint");
+            }
+            else if (pressedElement.Value.Equals("Virtual Keyboard"))
+            {
+                NavigationService.Navigate(new Uri("/VirtualKeyboard.xaml", UriKind.Relative));
+                MainPage.communicator.SendMessageThroughUDP("Mode:Keyboard");
+            }
+            else if (pressedElement.Value.Equals("Racer Game"))
+            {
+                NavigationService.Navigate(new Uri("/AccelerometerWindow.xaml", UriKind.Relative));
+                MainPage.communicator.SendMessageThroughUDP("Mode:RacerGame");
+                Debug.WriteLine("Accelerometer Window was open");
+            } 
+//            string selectedIndex = "";
+//            if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))
+//            {
+//                int index = int.Parse(selectedIndex);
+//                Debug.WriteLine("Selected index=" + index);
+//            }
+//            else
+//            {
+//                //listOfAvalableApplication.IndexOf((sender as ListBoxItem).
+//                //NavigationService.Navigate(new Uri("/AccelerometerWindow.xaml", UriKind.Relative));
+//                //NavigationService.Navigate(new Uri("/TouchWindow.xaml", UriKind.Relative));
+//            }
+           
         }
     }
 }

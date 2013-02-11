@@ -1,0 +1,31 @@
+package remotehid.remotehidserver;
+
+import java.io.IOException;
+
+import com.centralnexus.input.Joystick;
+import com.centralnexus.input.JoystickListener;
+
+public class RemoteHid {
+	
+	public static void  main(String args[]) throws IOException {
+		
+		Joystick  j = Joystick.createInstance();
+		j.addJoystickListener(	new JoystickListener() {
+			
+			@Override
+			public void joystickButtonChanged(Joystick arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void joystickAxisChanged(Joystick arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		j.
+		
+	}
+
+}

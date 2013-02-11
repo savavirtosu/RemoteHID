@@ -84,6 +84,12 @@
     <Compile Include="SearchComputers.xaml.cs">
       <DependentUpon>SearchComputers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TouchWindow.xaml.cs">
+      <DependentUpon>TouchWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualKeyboard.xaml.cs">
+      <DependentUpon>VirtualKeyboard.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -103,6 +109,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchComputers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TouchWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VirtualKeyboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

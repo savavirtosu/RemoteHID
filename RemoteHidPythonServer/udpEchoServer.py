@@ -26,6 +26,7 @@ class UDPEchoServer(Thread):
 		Thread.__init__(self)
 		self.running = True
 		self.UDPSocket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+		self.response_msg = response_msg
 		try:
 			self.UDPSocket.bind(("", SERVER.UDP_ECHO_PORT))
 		except: 
@@ -41,8 +42,8 @@ class UDPEchoServer(Thread):
 		while self.running:
 			data, address = self.UDPSocket.recvfrom(SERVER.MAX_BUFFER_SIZE)
 			#empty string counts as False
-			if response_msg:
-				self.UDPSocket.sendto( response_msg , (address[0], address[1]) )
+			if self.response_msg:
+				self.UDPSocket.sendto( self.response_msg , (address[0], address[1]) )
 			else:
 				self.UDPSocket.sendto( data , (address[0], address[1]) )
 			#TODO: manage debug info

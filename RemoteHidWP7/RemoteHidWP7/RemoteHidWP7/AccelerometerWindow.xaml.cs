@@ -37,6 +37,7 @@ namespace RemoteHidWP7
 
         public void Init()
         {
+            
             if (!Accelerometer.IsSupported)
             {
                 // The device on which the application is running does not support
@@ -49,7 +50,7 @@ namespace RemoteHidWP7
             {
                 // Initialize the timer and add Tick event handler, but don't start it yet.
                 timer = new DispatcherTimer();
-                timer.Interval = TimeSpan.FromMilliseconds(30);
+                timer.Interval = TimeSpan.FromMilliseconds(80);
                 timer.Tick += new EventHandler(timer_Tick);
             }
 
