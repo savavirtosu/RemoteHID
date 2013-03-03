@@ -17,6 +17,7 @@ public final class R {
     }
     public static final class id {
         public static final int TextViewOrientation=0x7f050004;
+        public static final int search_computer=0x7f050008;
         public static final int textViewAcceleration=0x7f050000;
         public static final int textViewAcceleration_x=0x7f050001;
         public static final int textViewAcceleration_y=0x7f050002;

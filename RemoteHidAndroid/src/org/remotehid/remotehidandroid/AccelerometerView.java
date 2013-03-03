@@ -25,7 +25,6 @@ public class AccelerometerView extends Activity implements SensorEventListener {
 	 public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-	    setContentView(R.layout.main);
 	 
 	    //just some textviews, for data output
 	    outputAccelerometer_X = (TextView) findViewById(R.id.textViewAcceleration_x);

@@ -5,18 +5,6 @@
     android:orientation="vertical" >
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
-    <TextView
-        android:id="@+id/textViewAcceleration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acceleration"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/textViewAcceleration_x"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,18 +18,17 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <Button
+        android:id="@+id/search_computer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Computer" />
+
     <TextView
         android:id="@+id/textViewAcceleration_z"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/TextViewOrientation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Orientation"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
